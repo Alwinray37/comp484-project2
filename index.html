@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <!-- adding jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
     <header>
@@ -20,13 +22,18 @@
     <main>
       <section class="pet-image-container">
          <!-- Replace pet image with your own pet image -->
-        <img class="pet-image" src="">
+        <img class="pet-image" src="images/pet_img.jpeg">
       </section>
       <section class="dashboard">
         <div>Name: <strong><span class="name"></span></strong></div>
         <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
         <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
+        <div>Energy: <strong><span class="energy"></span> Energy meter</strong></div>
         <div class="button-container">
+          <!-- nap btn: disables other buttons for 5 sec, increases happiness and energy  -->
+          <button class="nap-button">
+            Nap
+          </button>
           <button class="treat-button">
             Treat
           </button>
