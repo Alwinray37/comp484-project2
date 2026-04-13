@@ -133,13 +133,20 @@ function clickedNapButton(){
 	}, nap_duration);
 }
 function clickedJokeButton(){
-	getJoke();
+	fetch("https://official-joke-api.appspot.com/random_joke")
+		.then(response => response.json())
+		.then(data => {
+			pet_message.text(data.setup + " ... " + data.punchline);
+		}
+	).catch( () => {
+		pet_message.text("No jokes right now :(");
+	});
 }
 
 // helper functions ================================
 // function to disable buttons when nap is clicked, or energy is 0
 function disableButtons(disable){
-	const actionButtons = $('.treat-button, .play-button, .exercise-button');
+	const actionButtons = $('.treat-button, .play-button, .exercise-button, .joke-button');
 	actionButtons.prop('disabled', disable);
 	actionButtons.css("background-color", disable ? "gray" : "");
 }
@@ -179,13 +186,4 @@ function updateEnergyBar(){
 			$(this).addClass("box-fill-green");
 		}
 	});
-}
-
-function getJoke() {
-	fetch("https://official-joke-api.appspot.com/random_joke")
-		.then(response => response.json())
-		.then(data => {
-			pet_message.text(data.setup + " ... " + data.punchline);
-		}
-	);
 }
