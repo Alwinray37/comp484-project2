@@ -72,9 +72,8 @@ footer a {
 }
 
 .button-container button {
-	width: 100px;
-	margin-right: 10px;
-	padding: 1rem;
+	width: 150px;
+	padding: .75rem;
 	text-align: center;
 	display: inline-block;
 	font-size: 1.2rem;

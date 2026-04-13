@@ -7,6 +7,7 @@ let treatBtn = $('.treat-button');
 let playBtn = $('.play-button');
 let exerciseBtn = $('.exercise-button');
 let napBtn = $('.nap-button');
+let jokeBtn = $('.joke-button');
 
 // Makes sure that your function is called once all the DOM elements of the page are ready to be used.
 $(function () { 
@@ -15,6 +16,7 @@ $(function () {
 	playBtn.click(clickedPlayButton);
 	exerciseBtn.click(clickedExerciseButton);
 	napBtn.click(clickedNapButton);
+	jokeBtn.click(clickedJokeButton);
 	// creating the boxes for status bars
 	setBoxes();
 	// Called function to update the name, happiness, and weight of our pet in our HTML
@@ -130,7 +132,11 @@ function clickedNapButton(){
 		checkAndUpdatePetInfoInHtml();
 	}, nap_duration);
 }
+function clickedJokeButton(){
+	getJoke();
+}
 
+// helper functions ================================
 // function to disable buttons when nap is clicked, or energy is 0
 function disableButtons(disable){
 	const actionButtons = $('.treat-button, .play-button, .exercise-button');
@@ -144,7 +150,6 @@ function setBoxes(){
 		let $box = $("<div class='box'></div>");
 		$("#happiness-bar-cont").append($box);
 		$("#energy-bar-cont").append($box.clone());
-
 	}
 }
 
@@ -174,4 +179,13 @@ function updateEnergyBar(){
 			$(this).addClass("box-fill-green");
 		}
 	});
+}
+
+function getJoke() {
+	fetch("https://official-joke-api.appspot.com/random_joke")
+		.then(response => response.json())
+		.then(data => {
+			pet_message.text(data.setup + " ... " + data.punchline);
+		}
+	);
 }
