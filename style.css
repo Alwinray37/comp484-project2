@@ -45,18 +45,21 @@ footer a {
 	float: left;
 	margin: 5px;
 }
-
+.pet-image-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
+	padding: 1rem;
+}
 .pet-image {
 	height: 250px;
+	border-radius: 50%;
 }
 
-.dashboard div {
-	display: block;
-}
-
-.pet-image-container {
-	float: left;
-	padding: 10px;
+.pet-message{
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #1e2835;
 }
 
 .dashboard {
@@ -86,4 +89,25 @@ footer a {
 .button-container button:hover {
 	cursor: pointer;
 	background-image: linear-gradient(45deg, rgba(246, 246, 246, 0.38)0%, rgba(30, 40, 53, 0)66%);
+}
+
+.stat {
+	margin-top: 1rem;
+}
+.bar-container{
+	width: 300px;
+	display: flex;
+	flex-direction: row;
+}
+.box{
+	height: 10px;
+	width: 10px;
+	outline: 1px solid gray;
+	/* float: left; */
+}
+.box-fill-green{
+	background-color: #53e753a2;
+}
+.box-fill-red{
+	background-color: #ff6b6b;
 }

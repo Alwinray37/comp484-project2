@@ -23,12 +23,26 @@
       <section class="pet-image-container">
          <!-- Replace pet image with your own pet image -->
         <img class="pet-image" src="images/pet_img.jpeg">
+
+        <!-- pet message when buttons are clicked -->
+        <p class="pet-message">RUFF!</p>
       </section>
+
       <section class="dashboard">
         <div>Name: <strong><span class="name"></span></strong></div>
         <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
         <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
         <div>Energy: <strong><span class="energy"></span> Energy meter</strong></div>
+        <div class="stat">
+          <span class="stat-label">Happiness:</span>
+          <div id="happiness-bar-cont" class="bar-container">
+          </div>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Energy:</span>
+          <div id="energy-bar-cont" class="bar-container">
+          </div>
+        </div>
         <div class="button-container">
           <!-- nap btn: disables other buttons for 5 sec, increases happiness and energy  -->
           <button class="nap-button">
